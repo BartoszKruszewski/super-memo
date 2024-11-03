@@ -22,7 +22,7 @@ class DataLoader:
         return LessonGroup(name=group_path.stem, lessons=lessons)
 
     def _load_lesson(self, json_file_path: Path) -> Lesson:
-        with open(json_file_path, "r") as f:
+        with open(json_file_path, "r", encoding="utf-8") as f:
             data = json.load(f)
 
         return Lesson(**data)
